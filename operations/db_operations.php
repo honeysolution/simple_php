@@ -29,7 +29,7 @@ class Operations extends connect{
          }
     
          public function SelectRecordParams($query){    
-            $connection = connection(); 
+            $connection = $this->connection; 
             $result = $connection->query($query);
             if ($result->num_rows > 0) {
                 while($rows = $result->fetch_assoc())
@@ -44,7 +44,7 @@ class Operations extends connect{
          }
     
         public function SingleRecordParams($query){    
-            $connection = connection();
+            $connection = $this->connection;
             $result = $connection->query($query);
             if ($result->num_rows > 0) {
                 $row = $result->fetch_object();
@@ -56,7 +56,7 @@ class Operations extends connect{
          }
     
         public function InsertData($query){
-            $connection = connection();
+            $connection = $this->connection;
             if ($connection->query($query) === TRUE) {
                 $last_id = $connection->insert_id;
             } else {
@@ -66,7 +66,7 @@ class Operations extends connect{
         }
     
         public function CommonOperation($query){
-            $connection = connection();
+            $connection = $this->connection;
             if ($connection->query($query) === TRUE) {
                 $last_id = 1;
             } else {
