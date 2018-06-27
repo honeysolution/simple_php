@@ -6,9 +6,9 @@ Website : www.akashaware.tech
 
 Date : 26-06-2018
 
-File Name : Config.php
+File Name : ArrayFunction.php
 
-Description : Website configuration
+Description : Function  interface between database and user 
 */
 
 function selectfromdb($table){
