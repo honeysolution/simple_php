@@ -33,8 +33,10 @@ require('config/Config.php');
 require('config/Database.php');
 require('system/connect.php');
 require('operations/db_operations.php');
-require('operations/image_operation.php');
+require('operations/image_operations.php');
+require('operations/excel_operations.php');
 require('functions/ArrayFunction.php');
 require('functions/ConfigFunction.php');
 require('functions/ImageFunction.php');
+require('functions/ExcelFunction.php');
 ?>
