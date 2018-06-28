@@ -33,5 +33,8 @@ require('config/Config.php');
 require('config/Database.php');
 require('system/connect.php');
 require('operations/db_operations.php');
+require('operations/image_operation.php');
 require('functions/ArrayFunction.php');
+require('functions/ConfigFunction.php');
+require('functions/ImageFunction.php');
 ?>
