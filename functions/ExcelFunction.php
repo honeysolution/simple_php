@@ -16,5 +16,14 @@ Description : Functions to read and download excel file
        return $excel->ReadData($file);
          
     }
+   
+    function read_excel_file($filename){
+        $excel = new Excel();
+        return $excel->ReadExcelFile($filename);
+    }
+    function convert_excel($exceldata,$title,$filename,$fontsize) {
+        $excel = new Excel();
+        return $excel->convert($exceldata,$title,$filename,$fontsize);
+    }
 
 ?>
