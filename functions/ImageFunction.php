@@ -6,9 +6,9 @@ Website : www.akashaware.tech
 
 Date : 26-06-2018
 
-File Name : ArrayFunction.php
+File Name : ImageFunction.php
 
-Description : Function  interface between database and user 
+Description : Functions to upload images and videos
 */
 
     function image_upload($image_file,$image_name,$save_path){
@@ -74,6 +74,59 @@ Description : Function  interface between database and user
         else {
             return 'some error occured';
             }      
+    }
+
+    function upload_video($image_name,$image_file,$save_path){
+         $image = new image();
+         $image_path = $image_file['tmp_name'];
+         $allowedExts = array("mp4", "wma", "avi", "mpeg");
+         $fileType = pathinfo($image_file['name'],PATHINFO_EXTENSION);
+         if(in_array(strtolower($fileType),$allowedExts)=== false){
+             return "Invalid video file type.";
+             exit;
+          }
+         $targe_file = $save_path.$image_name.'.'.$fileType;
+          $isupload = $image->UploadImage($image_path, $targe_file);
+         if($isupload) {
+             return 'Video uploaded sucessfully';
+         }
+        else {
+            return 'some error occured';
+        }
+    }
+    function upload_pdf($image_name,$image_file, $save_path){
+         $image = new image();
+         $image_path = $image_file['tmp_name'];
+
+         $fileType = pathinfo($image_file['name'],PATHINFO_EXTENSION);
+         if(strtolower($fileType) != 'pdf') {
+              return "Invalid file type.";
+              exit;
+         }
+         $targe_file = $save_path.$image_name.'.pdf';
+         $isupload = $image->UploadImage($image_path, $targe_file);
+         if($isupload) {
+             return 'Pdf uploaded sucessfully';
+         }
+            else {
+            return 'some error occured';
+        }
+    }
+  
+    function upload_any_file($image_name,$image_file, $save_path){
+       $image = new image();
+         $image_path = $image_file['tmp_name'];
+
+         $fileType = pathinfo($image_file['name'],PATHINFO_EXTENSION);
+         
+         $targe_file = $save_path.$image_name.'.'.$fileType;
+         $isupload = $image->UploadImage($image_path, $targe_file);
+         if($isupload) {
+             return 'File uploaded sucessfully';
+         }
+            else {
+            return 'some error occured';
+        } 
     }
 
 ?>
