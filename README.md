@@ -1,5 +1,7 @@
 <h3>Making PHP simple for Freshers.</h3>
 
+<h4>To use simple_php in your project include index.php in your files</h4>
+
 <h4>Configure your database</h4>
 
 <p> Open config->database.php <br><br>
