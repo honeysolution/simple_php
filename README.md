@@ -32,13 +32,13 @@ $width = width of image to save.
 $height = height of image to save.
 </p><br>
 <p>3.Upload image ( Image compression ) : upload_image_with_compression($image_name,$image_file,$save_path,$width,$height).</p><br>
-<p>3.Upload Video : upload_video($image_name,$image_file,$save_path).</p><br>
-<p>3.Upload PDF : upload_pdf($image_name,$image_file, $save_path).</p><br>
-<p>3.Upload any file : upload_any_file($image_name,$image_file, $save_path).</p><br><br>
+<p>4.Upload Video : upload_video($image_name,$image_file,$save_path).</p><br>
+<p>5.Upload PDF : upload_pdf($image_name,$image_file, $save_path).</p><br>
+<p>6.Upload any file : upload_any_file($image_name,$image_file, $save_path).</p><br>
 
-<h4>Import / Export Data </h4>
+<h4>Import / Export Data (using PHPexcel Library)</h4>
 <p>1.Import excel and view in array : read_excel_file($file);  uploaded file. eg $_FILES['file]</p><br>
-<p>1.Export to  excel: convert_excel($data,$title,$filename,$fontsize);<br>
+<p>2.Export to  excel: convert_excel($data,$title,$filename,$fontsize);<br>
 1.$data : Array of data to export.<br> 
 2.$title : title to file.<br> 
 3.$filename : file name to save excel. <br>   
