@@ -20,6 +20,8 @@ class config {
 
         $config['allowed_images'] = array("jpeg","jpg","png");
         
+        $config['allowed_files'] = array("xls","xlsx");
+        
         $config['images_size'] = 2; // size in mb
         
         $this->config = $config;

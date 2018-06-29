@@ -17,9 +17,16 @@ Description : Functions to read and download excel file
          
     }
    
-    function read_excel_file($filename){
+    function read_excel_file($file){
+        $config = new Config();
         $excel = new Excel();
-        return $excel->ReadExcelFile($filename);
+        $allow = $config->config['allowed_files'];
+        $fileType = pathinfo($file['name'],PATHINFO_EXTENSION);       
+        if(in_array(strtolower($fileType),$allow)=== false){
+             return "Invalid file type.";
+             exit;
+        }
+        return $excel->ReadExcelFile($file['tmp_name']);
     }
     function convert_excel($exceldata,$title,$filename,$fontsize) {
         $excel = new Excel();

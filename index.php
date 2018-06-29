@@ -32,6 +32,8 @@ define('OPERATON_PATH',$database);
 require('config/Config.php');
 require('config/Database.php');
 require('system/connect.php');
+require('third_party/PHPExcel/PHPExcel.php');
+//require('third_party/PHPExcel/PHPExcel/IOFactory.php');
 require('operations/db_operations.php');
 require('operations/image_operations.php');
 require('operations/excel_operations.php');
